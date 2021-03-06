@@ -30,4 +30,9 @@ public class ActivityController {
     public List<Activity> getActivities() {
         return activityService.getAll();
     }
+
+    @GetMapping(value = "/simple")
+    public String getSimple() {
+        return "Hello Simple";
+    }
 }
