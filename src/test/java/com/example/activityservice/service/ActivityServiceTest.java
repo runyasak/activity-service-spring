@@ -1,6 +1,7 @@
 package com.example.activityservice.service;
 
 import com.example.activityservice.model.Activity;
+import com.example.activityservice.repository.ActivityRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,8 @@ class ActivityServiceTest {
 
     @Test
     void getAllTest() {
-        ActivityService activityService = new ActivityService();
+        ActivityRepository activityRepository;
+        ActivityService activityService = new ActivityService(activityRepository);
         List<Activity> actual = activityService.getAll();
 
         Assertions.assertEquals(2, actual.size());
