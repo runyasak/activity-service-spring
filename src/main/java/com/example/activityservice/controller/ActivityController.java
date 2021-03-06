@@ -9,11 +9,11 @@ public class ActivityController {
 
     @GetMapping(value = "/activity")
     public Activity getActivity() {
-        Activity activity = new Activity();
-        activity.setId(1);
-        activity.setName("Login");
-        activity.setDescription("World is logged in");
 
-        return activity;
+        return Activity.builder()
+                .id(1)
+                .name("Login")
+                .description("World is logged in")
+                .build();
     }
 }
