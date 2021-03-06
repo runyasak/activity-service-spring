@@ -3,6 +3,7 @@ package com.example.activityservice.controller;
 import com.example.activityservice.model.Activity;
 import com.example.activityservice.service.ActivityService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class ActivityController {
     @GetMapping(value = "/activities")
     public List<Activity> getActivities() {
         return activityService.getAll();
+    }
+
+    @GetMapping(value = "/activities/{USER}")
+    public List<Activity> getActivitiesFromUser(@PathVariable("USER") String username) {
+        return activityService.getByUser(username);
     }
 
     @GetMapping(value = "/simple")
