@@ -20,6 +20,6 @@ public class ActivityService {
     }
 
     public List<Activity> getByUser(String username) {
-        return activityRepository.findActivityFromUser(username);
+        return activityRepository.findAllByCreatedBy(username);
     }
 }
