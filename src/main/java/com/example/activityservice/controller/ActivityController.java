@@ -10,6 +10,12 @@ import java.util.List;
 @RestController
 public class ActivityController {
 
+    private final ActivityService activityService;
+
+    public ActivityController(ActivityService activityService) {
+        this.activityService = activityService;
+    }
+
     @GetMapping(value = "/activity")
     public Activity getActivity() {
 
@@ -22,7 +28,6 @@ public class ActivityController {
 
     @GetMapping(value = "/activities")
     public List<Activity> getActivities() {
-        ActivityService activityService = new ActivityService();
         return activityService.getAll();
     }
 }
