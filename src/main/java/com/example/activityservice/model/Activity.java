@@ -1,10 +1,8 @@
 package com.example.activityservice.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Activity {
     private Integer id;
     private String name;
